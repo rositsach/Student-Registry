@@ -22,7 +22,7 @@ jobs:
     - run: npm test
 
 
-  build-security:
+  test-security:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
