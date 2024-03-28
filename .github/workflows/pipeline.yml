@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  build-integration:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -18,5 +18,18 @@ jobs:
         node-version: 20.x
         cache: 'npm'
     - run: npm install
-    - run: sleep 60
+    - run: sleep 10
     - run: npm test
+
+
+  build-security:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js 20
+      uses: actions/setup-node@v3
+      with:
+        node-version: 20.x
+        cache: 'npm'
+    - run: npm install
+    - run: test-npm-security
