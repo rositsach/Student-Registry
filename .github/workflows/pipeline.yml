@@ -18,4 +18,5 @@ jobs:
         node-version: 20.x
         cache: 'npm'
     - run: npm install
+    - run: sleep 60
     - run: npm test
