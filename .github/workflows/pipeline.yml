@@ -32,4 +32,4 @@ jobs:
         node-version: 20.x
         cache: 'npm'
     - run: npm install
-    - run: npm test-npm-security
+    - run: npm run test-npm-security
